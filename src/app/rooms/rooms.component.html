@@ -2,7 +2,10 @@
 
 <div [hidden]="hideRooms">
     Number of Rooms:
-    <div [innerText]="numberOfRooms"></div>
+    <div
+        [ngStyle]="{'color': rooms.availableRooms ? 'violet' : 'red'}" 
+        [innerText]="numberOfRooms">
+    </div>
 
     <div *ngIf="rooms.availableRooms > 0">
         Available Room List:
