@@ -20,40 +20,40 @@ export class RoomsComponent {
 
   roomList : RoomList[] = [
     {
-      roomNumber : 101,
-      roomType : 'Single',
-      roomAmenities : 'TV, AC, WiFi',
-      roomPhoto : '',
-      roomPrice : 2000,
-      roomCheckInTime : new Date('2022-10-10T10:00:00'),
-      roomCheckOutTime : new Date('2022-10-10T12:00:00')
+      number : 101,
+      type : 'Single',
+      amenities : 'TV, AC, WiFi',
+      photo : '',
+      price : 2000,
+      checkInTime : new Date('2022-10-10T10:00:00'),
+      checkOutTime : new Date('2022-10-10T12:00:00')
     },
     {
-      roomNumber : 102,
-      roomType : 'Double',
-      roomAmenities : 'TV, AC, WiFi',
-      roomPhoto : '',
-      roomPrice : 1500,
-      roomCheckInTime : new Date('2023-10-10T10:00:00'),
-      roomCheckOutTime : new Date('2023-10-10T12:00:00')
+      number : 102,
+      type : 'Double',
+      amenities : 'TV, AC, WiFi',
+      photo : '',
+      price : 1500,
+      checkInTime : new Date('2023-10-10T10:00:00'),
+      checkOutTime : new Date('2023-10-10T12:00:00')
     },
     {
-      roomNumber : 103,
-      roomType : 'Triple',
-      roomAmenities : 'TV, AC, WiFi',
-      roomPhoto : '',
-      roomPrice : 1000,
-      roomCheckInTime : new Date('2024-10-10T10:00:00'),
-      roomCheckOutTime : new Date('2024-10-10T12:00:00')
+      number : 103,
+      type : 'Triple',
+      amenities : 'TV, AC, WiFi',
+      photo : '',
+      price : 1000,
+      checkInTime : new Date('2024-10-10T10:00:00'),
+      checkOutTime : new Date('2024-10-10T12:00:00')
     },
     {
-      roomNumber : 104,
-      roomType : 'Single',
-      roomAmenities : 'TV, AC, WiFi',
-      roomPhoto : '',
-      roomPrice : 2000,
-      roomCheckInTime : new Date('2025-10-10T10:00:00'),
-      roomCheckOutTime : new Date('2025-10-10T12:00:00')
+      number : 104,
+      type : 'Single',
+      amenities : 'TV, AC, WiFi',
+      photo : '',
+      price : 2000,
+      checkInTime : new Date('2025-10-10T10:00:00'),
+      checkOutTime : new Date('2025-10-10T12:00:00')
     },
   ];
 
