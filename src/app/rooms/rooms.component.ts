@@ -10,12 +10,12 @@ export class RoomsComponent {
 
   hotelName = "Venky's Hotel";
   hideRooms = false;
-  numberOfRooms = 10;
+  numberOfRooms = 4;
 
   rooms : Rooms = {
-    availableRooms : 5,
-    bookedRooms : 10,
-    totalRooms : 15
+    availableRooms : 4,
+    bookedRooms : 0,
+    totalRooms : 4
   }
 
   roomList : RoomList[] = [

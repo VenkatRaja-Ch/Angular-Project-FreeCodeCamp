@@ -7,6 +7,14 @@
         [innerText]="numberOfRooms">
     </div>
 
+    <!-- Example of optional chaining! -->
+    <div *ngIf="rooms?.availableRooms"></div>
+
+    <!-- Example of Null Collisional Operator -->
+    {{ rooms?.availableRooms ?? 'No Rooms Available' }}
+
+    {{ roomList | json }}
+
     <div *ngIf="rooms.availableRooms > 0">
         Available Room List:
         <table>
