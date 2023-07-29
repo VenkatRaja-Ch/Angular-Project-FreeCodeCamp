@@ -13,7 +13,7 @@
     <!-- Example of Null Collisional Operator -->
     {{ rooms?.availableRooms ?? 'No Rooms Available' }}
 
-    {{ roomList | json }}
+    <!-- {{ roomList | json }} -->
 
     <div *ngIf="rooms.availableRooms > 0">
         Available Room List:
@@ -26,8 +26,9 @@
                 <td>Room Amenities:</td>
                 <td>Check-In Time:</td>
                 <td>Room View:</td>
+                <td>Room Rating:</td>
             </tr>
-            <tr *ngFor="let room of roomList;
+            <tr *ngFor="let room of roomList | slice : 0:4;
                 let e = even;
                 let o = odd;
                 let i = index;"
@@ -36,14 +37,15 @@
                 <td>{{ i }}</td>
                 <td>{{ room.number }}</td>
                 <td>{{ room.type }}</td>
-                <td>{{ room.price }}</td>
-                <td>{{ room.amenities }}</td>
-                <td>{{ room.checkInTime }}</td>
+                <td>{{ room.price | currency : 'EUR' }}</td>
+                <td>{{ room.amenities | lowercase }}</td>
+                <td>{{ room.checkInTime | date : 'dd-MMM-yyyy' }}</td>
                 <td>{{ e ? "Sea View" : "City View" }}</td>
+                <td>{{ room.rating | number : '1.1-2' }}</td>
             </tr>
         </table>
     </div>
 </div>
 
-<button (click)="toggleRooms()">HIDE/SHOW ROOM INFO</button>
+<button (click)="toggleRooms()"> {{ hideShowButtonName | titlecase }} </button>
 
