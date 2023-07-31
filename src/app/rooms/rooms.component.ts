@@ -13,6 +13,7 @@ export class RoomsComponent {
   numberOfRooms = 4;
   hideShowButtonName = 'HIDE / SHOW ROOMS';
 
+  title = 'Rooms List';
   selectedRoom! : RoomList;
 
   rooms : Rooms = {
@@ -73,6 +74,7 @@ export class RoomsComponent {
 
   toggleRooms() {
     this.hideRooms = !this.hideRooms;
+    this.title = "List of Available Rooms";
   }
 
   selectRoom(room : RoomList) {
