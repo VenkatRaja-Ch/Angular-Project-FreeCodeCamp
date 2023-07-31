@@ -11,39 +11,19 @@
     <div *ngIf="rooms?.availableRooms"></div>
 
     <!-- Example of Null Collisional Operator -->
-    {{ rooms?.availableRooms ?? 'No Rooms Available' }}
+    <!-- {{ rooms?.availableRooms ?? 'No Rooms Available' }} -->
 
     <!-- {{ roomList | json }} -->
 
+    <div *ngIf="selectedRoom">
+        {{ selectedRoom | json }}
+    </div>
+    
     <div *ngIf="rooms.availableRooms > 0">
-        Available Room List:
-        <table class="table">
-            <tr>
-                <td>Index</td>
-                <td>Room Number:</td>
-                <td>Room Type:</td>
-                <td>Room Price:</td>
-                <td>Room Amenities:</td>
-                <td>Check-In Time:</td>
-                <td>Room View:</td>
-                <td>Room Rating:</td>
-            </tr>
-            <tr *ngFor="let room of roomList | slice : 0:4;
-                let e = even;
-                let o = odd;
-                let i = index;"
-                [ngClass]=" e ? 'even' : 'odd'	"
-            >
-                <td>{{ i }}</td>
-                <td>{{ room.number }}</td>
-                <td>{{ room.type }}</td>
-                <td>{{ room.price | currency : 'EUR' }}</td>
-                <td>{{ room.amenities | lowercase }}</td>
-                <td>{{ room.checkInTime | date : 'dd-MMM-yyyy' }}</td>
-                <td>{{ e ? "Sea View" : "City View" }}</td>
-                <td>{{ room.rating | number : '1.1-2' }}</td>
-            </tr>
-        </table>
+        <app-rooms-list [rooms]="roomList"
+                        (selectedRooms)="selectRoom($event)"
+        >
+        </app-rooms-list>
     </div>
 </div>
 

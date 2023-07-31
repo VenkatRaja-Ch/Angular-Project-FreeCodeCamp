@@ -13,59 +13,69 @@ export class RoomsComponent {
   numberOfRooms = 4;
   hideShowButtonName = 'HIDE / SHOW ROOMS';
 
+  selectedRoom! : RoomList;
+
   rooms : Rooms = {
     availableRooms : 4,
     bookedRooms : 0,
     totalRooms : 4
   }
 
-  roomList : RoomList[] = [
-    {
-      number : 101,
-      type : 'Single',
-      amenities : 'TV, AC, WiFi',
-      photo : '',
-      price : 2000,
-      checkInTime : new Date('2022-10-10T10:00:00'),
-      checkOutTime : new Date('2022-10-10T12:00:00'),
-      rating : 4.7
-    },
-    {
-      number : 102,
-      type : 'Double',
-      amenities : 'TV, AC, WiFi',
-      photo : '',
-      price : 1500,
-      checkInTime : new Date('2023-10-10T10:00:00'),
-      checkOutTime : new Date('2023-10-10T12:00:00'),
-      rating : 3.6
-    },
-    {
-      number : 103,
-      type : 'Triple',
-      amenities : 'TV, AC, WiFi',
-      photo : '',
-      price : 1000,
-      checkInTime : new Date('2024-10-10T10:00:00'),
-      checkOutTime : new Date('2024-10-10T12:00:00'),
-      rating : 2.4
-    },
-    {
-      number : 104,
-      type : 'Single',
-      amenities : 'TV, AC, WiFi',
-      photo : '',
-      price : 2000,
-      checkInTime : new Date('2025-10-10T10:00:00'),
-      checkOutTime : new Date('2025-10-10T12:00:00'),
-      rating : 5.0
-    },
-  ];
-
+  roomList : RoomList[] =  [];
+  
   constructor() {}
-  ngOnInit() {}
+
+  ngOnInit() {
+    
+    this.roomList = [
+      {
+        number : 101,
+        type : 'Single',
+        amenities : 'TV, AC, WiFi',
+        photo : '',
+        price : 2000,
+        checkInTime : new Date('2022-10-10T10:00:00'),
+        checkOutTime : new Date('2022-10-10T12:00:00'),
+        rating : 4.7
+      },
+      {
+        number : 102,
+        type : 'Double',
+        amenities : 'TV, AC, WiFi',
+        photo : '',
+        price : 1500,
+        checkInTime : new Date('2023-10-10T10:00:00'),
+        checkOutTime : new Date('2023-10-10T12:00:00'),
+        rating : 3.6
+      },
+      {
+        number : 103,
+        type : 'Triple',
+        amenities : 'TV, AC, WiFi',
+        photo : '',
+        price : 1000,
+        checkInTime : new Date('2024-10-10T10:00:00'),
+        checkOutTime : new Date('2024-10-10T12:00:00'),
+        rating : 2.4
+      },
+      {
+        number : 104,
+        type : 'Single',
+        amenities : 'TV, AC, WiFi',
+        photo : '',
+        price : 2000,
+        checkInTime : new Date('2025-10-10T10:00:00'),
+        checkOutTime : new Date('2025-10-10T12:00:00'),
+        rating : 5.0
+      }
+    ];
+  }
 
   toggleRooms() {
     this.hideRooms = !this.hideRooms;
+  }
+
+  selectRoom(room : RoomList) {
+    this.selectedRoom = room;
   }
 }
