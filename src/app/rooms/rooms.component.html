@@ -6,25 +6,29 @@
         [ngStyle]="{'color': rooms.availableRooms ? 'violet' : 'red'}" 
         [innerText]="numberOfRooms">
     </div>
+</div>
 
-    <!-- Example of optional chaining! -->
-    <div *ngIf="rooms?.availableRooms"></div>
+<!-- Example of optional chaining! -->
+<div *ngIf="rooms?.availableRooms"></div>
 
-    <!-- Example of Null Collisional Operator -->
-    <!-- {{ rooms?.availableRooms ?? 'No Rooms Available' }} -->
+<!-- Example of Null Collisional Operator! -->
+<!-- {{ rooms?.availableRooms ?? 'No Rooms Available' }} -->
 
-    <!-- {{ roomList | json }} -->
+<!-- {{ roomList | json }} -->
 
-    <div *ngIf="selectedRoom">
-        {{ selectedRoom | json }}
-    </div>
-    
-    <div *ngIf="rooms.availableRooms > 0">
-        <app-rooms-list [rooms]="roomList"
-                        (selectedRooms)="selectRoom($event)"
-        >
-        </app-rooms-list>
-    </div>
+<div *ngIf="selectedRoom">
+    {{ selectedRoom | json }}
+</div>
+
+<div>
+    <button (click)="addRoom()">Add Room</button>
+</div>
+
+<div *ngIf="rooms.availableRooms > 0">
+    <app-rooms-list [rooms]="roomList"
+                    (selectedRooms)="selectRoom($event)"
+    >
+    </app-rooms-list>
 </div>
 
 <button (click)="toggleRooms()"> {{ hideShowButtonName | titlecase }} </button>

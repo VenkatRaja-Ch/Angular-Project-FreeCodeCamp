@@ -78,4 +78,20 @@ export class RoomsComponent {
   selectRoom(room : RoomList) {
     this.selectedRoom = room;
   }
+
+  addRoom() {
+    const room : RoomList = {
+      number : 105,
+      type : 'Triple',
+      amenities : 'TV, AC, WiFi, Fridge, Kitchen, Balcony',
+      photo : '',
+      price : 4000,
+      checkInTime : new Date('2026-10-10T10:00:00'),
+      checkOutTime : new Date('2026-10-10T12:00:00'),
+      rating : 4.9
+    }
+
+    // this.roomList.push(room);
+    this.roomList = [...this.roomList, room];
+  }
 }

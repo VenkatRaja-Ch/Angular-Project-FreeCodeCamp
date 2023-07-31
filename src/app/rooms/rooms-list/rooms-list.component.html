@@ -11,7 +11,9 @@ Available Room List:
         <th>Room Rating:</th>
         <th>Select Room</th>
     </tr>
-    <tr *ngFor="let room of rooms | slice : 0:4;
+    
+    <!-- <tr *ngFor="let room of rooms | slice : 0:4; -->
+    <tr *ngFor="let room of rooms
         let e = even;
         let o = odd;
         let i = index;"
